@@ -18,8 +18,8 @@ O objetivo deste projeto é fazer essa switch funcionar usando Telegram.
 git clone https://github.com/Paulo-Rogerio/alertmanager-prometheus-telegram.git
 ```
 
-Altere suas credenciais do Telegram, sendo TELEGRAM_ADMIN é *** SEU CHAT_ID *** e 
-TELEGRAM_TOKEN é *** TOKEN ***.
+Altere suas credenciais do Telegram, sendo TELEGRAM_ADMIN é ***SEU CHAT_ID*** e 
+TELEGRAM_TOKEN é ***TOKEN*** .
 
 ```
       TELEGRAM_ADMIN: '22222'
@@ -78,7 +78,7 @@ Abra seu cliente Telegram e interaja com seu Bot.
 /start
 ```
 
-Interrompa o serviço do container *** mongodb-exporter **** 
+Interrompa o serviço do container ***mongodb-exporter*** 
 
 ```
 docker stop 9dec6cb5a159
