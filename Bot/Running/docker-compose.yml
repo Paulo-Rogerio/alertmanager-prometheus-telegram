@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+
+  alertmanager-notifier:
+    image: ixdotai/alertmanager-notifier:latest
+    environment:
+      EXCLUDE_LABELS: "yes"
+      TELEGRAM_TOKEN: "214462370:AAHrbocYjO24SDL57KPCGorEN2StMXwWaqg"
+      TELEGRAM_CHAT_ID: "159438977"
+    ports:
+      - 8899:8899      
