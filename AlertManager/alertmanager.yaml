@@ -1,23 +1,20 @@
 global:
+
 route:
-  receiver: 'alertmanager-bot'
-  group_by: ['alertname']
-  group_wait:      15s
-  group_interval:  15s
-  repeat_interval: 1m
+  receiver: 'alertmanager webhook'
 
-# Estudar comportamentos quando cria-se rotas específicas.
-# routes:
-# - receiver: AlertaDataBase
-#   match:
-#     team: mongodb
-
-# - receiver: AlertaWebApi
-#   match:
-#     team: webapi
+  routes:
+  # group_by: ['alertname']
+  # group_wait:      15s
+  # group_interval:  15s
+  # repeat_interval: 1m
+  - receiver: 'alertmanager-notifier-webhook'
 
 receivers:
-- name: 'alertmanager-bot'
+- name: 'alertmanager-notifier-webhook'
   webhook_configs:
-  - send_resolved: true
-    url: 'http://alertmanager-bot:8080'
+  - url: http://alertmanager-notifier:8899/alert
+
+- name: 'alertmanager webhook'
+  webhook_configs:
+  - url: http://alertmanager-notifier:8899/alert

@@ -5,6 +5,7 @@ groups:
     expr: up == 0
     for: 10s
     labels:
+      team: mongodb
       severity: hight
     annotations:
       summary: MongoDB is down

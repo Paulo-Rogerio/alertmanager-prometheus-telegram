@@ -62,7 +62,8 @@ services:
       - "9090:9090"
     volumes:
       - ./Prometheus/prometheus.yaml:/etc/prometheus/prometheus.yml
-      - ./Prometheus/mongoDBAlertaRules.yaml:/etc/prometheus/mongoDBAlertaRules.yaml  
+      - ./Prometheus/mongoDBAlertaRules.yaml:/etc/prometheus/mongoDBAlertaRules.yaml
+      # - ./Prometheus/mongoWebAPIAlertaRules.yaml:/etc/prometheus/mongoWebAPIAlertaRules.yaml  
     networks:
       - metricas   
     depends_on: 
@@ -80,15 +81,14 @@ services:
     networks:
       - metricas      
 
-  alertmanager-bot:
-    image: metalmatze/alertmanager-bot:0.4.2
+  alertmanager-notifier:
+    image: ixdotai/alertmanager-notifier:latest
     environment:
-      ALERTMANAGER_URL: http://alertmanager:9093
-      BOLT_PATH: /data/bot.db
-      STORE: bolt
-      TELEGRAM_ADMIN: '222222'
-      TELEGRAM_TOKEN: xxxxxxxxx:Yyyyyyyyyyyyyyyyyyyyyyyyyyy
-      TEMPLATE_PATHS: /templates/default.tmpl
+      EXCLUDE_LABELS: "yes"
+      TELEGRAM_TOKEN: "21212121212:Afdfkfdfdfiffeoreorieor"
+      TELEGRAM_CHAT_ID: "77777777"
+    ports:
+      - 8899:8899  
     networks:
       - metricas    
 
