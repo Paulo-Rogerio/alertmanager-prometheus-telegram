@@ -18,11 +18,12 @@ O objetivo deste projeto é fazer essa switch funcionar usando Telegram.
 git clone https://github.com/Paulo-Rogerio/alertmanager-prometheus-telegram.git
 ```
 
-Altere suas credenciais do Telegram, sendo TELEGRAM_ADMIN é ***SEU CHAT_ID*** e 
-TELEGRAM_TOKEN é ***TOKEN*** .
+Altere suas credenciais do Telegram para:
+TELEGRAM_CHAT_ID => ***CHAT_ID***  
+TELEGRAM_TOKEN   => ***TOKEN*** 
 
 ```
-      TELEGRAM_ADMIN: '22222'
+      TELEGRAM_CHAT_ID: '22222'
       TELEGRAM_TOKEN: xxxxxxxxx:Yyyyyyyyyyyyyyyyyyyyyyyyyyy
 ```      
 

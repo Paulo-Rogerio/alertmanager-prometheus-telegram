@@ -3,9 +3,10 @@ global:
   evaluation_interval: 15s
 
 rule_files:
-  - mongoDBAlertaRules.yaml
-  # - mongoWebAPIAlertaRules.yaml
+  - servicesDownRules.yaml
+  - webAPIAlertaRules.yaml
 
+# EndPoints que quero monitorar
 scrape_configs:
   - job_name: Prometheus
     static_configs:
@@ -22,6 +23,7 @@ scrape_configs:
     static_configs:
       - targets: ['metricasapi:80']
 
+# AlertManager 
 alerting:
   alertmanagers:
   - scheme: http

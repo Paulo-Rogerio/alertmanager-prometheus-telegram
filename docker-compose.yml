@@ -62,8 +62,8 @@ services:
       - "9090:9090"
     volumes:
       - ./Prometheus/prometheus.yaml:/etc/prometheus/prometheus.yml
-      - ./Prometheus/mongoDBAlertaRules.yaml:/etc/prometheus/mongoDBAlertaRules.yaml
-      # - ./Prometheus/mongoWebAPIAlertaRules.yaml:/etc/prometheus/mongoWebAPIAlertaRules.yaml  
+      - ./Prometheus/servicesDownRules.yaml:/etc/prometheus/servicesDownRules.yaml
+      - ./Prometheus/webAPIAlertaRules.yaml:/etc/prometheus/webAPIAlertaRules.yaml  
     networks:
       - metricas   
     depends_on: 
@@ -86,7 +86,7 @@ services:
     environment:
       EXCLUDE_LABELS: "yes"
       TELEGRAM_TOKEN: "21212121212:Afdfkfdfdfiffeoreorieor"
-      TELEGRAM_CHAT_ID: "77777777"
+      TELEGRAM_CHAT_ID: "77777777"     
     ports:
       - 8899:8899  
     networks:

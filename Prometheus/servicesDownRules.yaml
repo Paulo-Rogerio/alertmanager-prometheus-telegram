@@ -1,0 +1,11 @@
+groups:
+- name: ServerDown
+  rules:
+  - alert: ServerDown
+    expr: up == 0
+    for: 10s
+    labels:
+      severity: hight
+    annotations:
+      summary: Server is down
+      description: The Server {{ $labels.instance }} is down.

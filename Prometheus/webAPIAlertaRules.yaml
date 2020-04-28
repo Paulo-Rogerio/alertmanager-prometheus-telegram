@@ -1,0 +1,12 @@
+groups:
+- name: WebApi
+  rules:
+  - alert: WEbAPIManyAcess
+    expr: rate(application_httprequests_transactions_count[1m])*60 > 20
+    for: 1m
+    labels:
+      team: webapi
+      severity: hight
+    annotations:
+      summary: WebApi request number on {{ $labels.instance }}
+      description: "The WebApi Server {{ $labels.instance }} has a median request number above 20 ( current value: {{ $value }}s)"
